@@ -8,6 +8,12 @@ public class Sorteo {
     private Date fecha;
     private String estado;
 
+    public Sorteo(String descripcion, Date fecha, String estado) {
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.estado = estado;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -21,7 +27,7 @@ public class Sorteo {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-    
+
     public String getEstado() {
         return estado;
     }
