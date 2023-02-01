@@ -26,7 +26,7 @@ public class User {
         return this.apellido2;
     }
 
-    public String rol() {
+    public String getRol() {
         return this.rol;
     }
 
