@@ -1,4 +1,4 @@
-package com.rociojorge.parkingmanagerDemo.Sorteo;
+package com.rociojorge.parkingmanagerDemo.sorteo;
 
 import java.util.Date;
 
