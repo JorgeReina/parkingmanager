@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Lista de usuarios</h1>
+    <br>
+    <table class="tabla">
+        <tr>
+            <th>Nombre</th>
+            <th>1º Apellido</th>
+            <th>2º Apellido</th>
+            <th>Rol</th>
+        </tr>
+        <tr th:each="user: ${users}">
+            <td>
+                <p th:text="${user.nombre}"></p>
+            </td>
+            <td>
+                <p th:text="${user.apellido1}"></p>
+            </td>
+            <td>
+                <p th:text="${user.apellido2}"></p>
+            </td>
+            <td>
+                <p th:text="${user.rol}"></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
