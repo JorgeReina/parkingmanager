@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Sorteos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        header{
+            background-color: darkgray;
+        }
+        .imagen{
+            padding: 5px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="imagen" src="https://restricciones-madrid.es/wp-content/uploads/2019/01/parking2.png" alt="">
+    </header>
+    <h1>Gestion de Sorteos</h1>
+    <br>
+    <table class="tabla">
+        <tr>
+            <th>Descripcion</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+        </tr>
+        <tr th:each="sorteo: ${sorteo}">
+            <td>
+                <p th:text="${sorteo.descripcion}"></p>
+            </td>
+            <td>
+                <p th:text="${sorteo.fecha}"></p>
+            </td>
+            <td>
+                <p th:text="${sorteo.estado}"></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
