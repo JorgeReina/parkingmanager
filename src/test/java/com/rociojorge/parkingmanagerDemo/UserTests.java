@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import com.rociojorge.parkingmanagerDemo.user.User;
 
-public class TestUser {
+public class UserTests {
     
     private User user;
 
