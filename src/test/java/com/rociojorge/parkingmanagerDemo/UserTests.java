@@ -52,4 +52,44 @@ public class UserTests {
         //Assert
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void check_set_apellido1(){
+        
+        String expected = "McCallan";
+        user.setApellido1("McCallan");
+        String actual = user.getApellido1();
+        assertEquals(actual,expected);
+
+    }
+
+    @Test
+    public void check_set_apellido2(){
+        
+        String expected = "Bird";
+        user.setApellido2("Bird");
+        String actual = user.getApellido2();
+        assertEquals(actual,expected);
+
+    }
+
+    @Test
+    public void check_set_nombre(){
+        
+        String expected = "carlos";
+        user.setNombre("carlos");
+        String actual = user.getNombre();
+        assertEquals(actual,expected);
+
+    }
+
+    @Test
+    public void check_set_rol(){
+        
+        String expected = "Alumno";
+        user.setRol("Alumno");
+        String actual = user.getRol();
+        assertEquals(actual,expected);
+
+    }
 }
