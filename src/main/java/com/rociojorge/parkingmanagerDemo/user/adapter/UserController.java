@@ -33,6 +33,7 @@ public class UserController {
 
     @PostMapping("/newUser")
     public String createUser(@ModelAttribute UserDao userDao) {
+        this.userService.register(userDao);
         return "redirect:/userlist";
     }
 }
