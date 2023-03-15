@@ -1,4 +1,4 @@
-package com.rociojorge.parkingmanagerDemo.user;
+package com.rociojorge.parkingmanagerDemo.user.domain;
 
 public class UserDao {
     

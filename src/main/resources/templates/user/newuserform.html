@@ -10,7 +10,7 @@
 <body>
     <h1>Crear nuevo usuario</h1>
     <br>
-    <form action="#" th:action="@{/createUser}" th:object="${/newuser}" method="post">
+    <form action="#" th:action="@{newUser}" th:object="${newuser}" method="post">
         <label>Nombre:</label>
         <input type="text" placeholder="Bonifacio" th:field="*{nombre}"/>
         <label>Primer apellido:</label>
