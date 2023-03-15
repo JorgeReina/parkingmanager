@@ -26,7 +26,7 @@ public class UserController {
         return "newuserform";
     }
 
-    @PostMapping("/createUser")
+    @PostMapping("/newUser")
     public String createUser(@ModelAttribute UserDao userDao) {
         return "redirect:/userlist";
     }
