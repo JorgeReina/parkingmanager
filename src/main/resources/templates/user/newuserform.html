@@ -8,8 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Crear nuevo usuario</h1>
-    <br>
+    <div id="page">
+    <header>
+        <div>
+            <img src="https://restricciones-madrid.es/wp-content/uploads/2019/01/parking2.png">
+            <h2>Crear usuario</a></h2>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="userlist">Usuarios</a>
+            <a href="sorteo">Sorteos</a>
+            <a href="#">Sobre nosotros</a>
+        </nav>
+    </header>
+    <br><br><br><br><br>
     <form action="#" th:action="@{newUser}" th:object="${newuser}" method="post">
         <label>Nombre:</label>
         <input type="text" placeholder="Bonifacio" th:field="*{nombre}"/>
@@ -22,5 +34,6 @@
         <button type="submit">Crear usuario</button>
     </form>
     <br>
+    </div>
 </body>
 </html>

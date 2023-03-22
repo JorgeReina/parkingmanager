@@ -1,5 +1,88 @@
-body{
+html, body{
+    padding:0;
+    margin:0;
+    height:100%;
     font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url(https://img3.goodfon.com/wallpaper/nbig/a/c2/pavement-yellow-lines-parking.jpg);
+}
+
+header{
+    background-color:#115EA2;
+    min-height:100px;
+    width:100%;
+    position:relative;
+    
+}
+
+header img{
+    float:left;
+    display:inline;
+}
+
+header h2{
+    text-align:center;
+    font-size:44px;
+    color:#FFFFFF;
+    left:0px;
+    top:20px;
+    font-weight:bold;
+    font-family: Sans-serif;
+    float:left;
+    margin-top:35px;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+header h2, a, a:hover, a:active{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header a:visited{
+    color:#000;
+}
+
+header img{
+    padding: 10px;
+    width: 5%;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+nav{
+    position:absolute;
+    top:100px;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#aaa;
+    min-width:800px;
+    text-align:left;
+    height:20px;
+    padding:10px 20px;
+}
+
+
+nav a{
+    font-size:14px;
+    margin:10px 0;height:20px;
+    padding:12px 10px;
+    color:#000;
+    text-decoration:none;
+}
+
+nav a:hover{
+background-color:#717171;
+}
+
+#page{
+    min-height:100%;
+    position:relative;
+    height:100%;
 }
 
 table, th, td {
@@ -11,10 +94,20 @@ table, th, td {
 
 table{
     background-color: darkgray;
+    
 }
+
 th{
     background-color: lightgray;
 }
+
 td{
     background-color: white;
 }
+h1{
+    margin-right: 130px;
+    margin-top: 35px;
+    vertical-align: middle;
+    color: white;
+}
+
