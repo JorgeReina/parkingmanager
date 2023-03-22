@@ -1,21 +1,10 @@
-package com.rociojorge.parkingmanagerDemo.Sorteo.domain;
+package com.rociojorge.parkingmanagerDemo.sorteo.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public class SorteoRepository {
-
-    private ArrayList<Sorteo> sorteo;
-    public  SorteoRepository() {
-        sorteo = new ArrayList<>();
-    }
-
-    public List<Sorteo> getAll() {
-        
-        this.sorteo.clear();
-        this.sorteo.add(new Sorteo("Sorteo 1", "08/02/2023", "Apto"));
-        return this.sorteo;
-
-    }
-
+@Repository
+public interface SorteoRepository extends CrudRepository<Sorteo,Long> {
+    
 }
+

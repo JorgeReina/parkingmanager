@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Sorteos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Crear nuevo sorteo</h1>
+    <br>
+    <form action="#" th:action="@{newSorteo}" th:object="${newsorteo}" method="post">
+        <label>Descripción:</label>
+        <input type="text" placeholder="Describe el sorteo" th:field="*{descripcion}"/>
+        <label>Fecha:</label>
+        <input type="text" th:field="*{fecha}"/>
+        <label>Estado:</label>
+        <input type="text" placeholder="Activo/Inactivo" th:field="*{estado}"/>
+        <button type="submit">Crear sorteo</button>
+    </form>
+    <br>
+</body>
+</html>

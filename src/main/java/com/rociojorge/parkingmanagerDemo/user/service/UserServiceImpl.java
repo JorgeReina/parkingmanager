@@ -4,9 +4,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rociojorge.parkingmanagerDemo.user.domain.User;
-import com.rociojorge.parkingmanagerDemo.user.domain.UserDao;
-import com.rociojorge.parkingmanagerDemo.user.domain.UserRepository;
+import com.rociojorge.parkingmanagerDemo.user.domain.*;
 
 @Service
 public class UserServiceImpl implements UserService{
