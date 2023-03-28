@@ -32,4 +32,42 @@ public class SorteoTests {
             String actual = sorteo.getFecha();
             assertEquals(expected, actual);
         }
+
+        @Test
+        public void check_sorteo_estado() {
+            String expected = "Aprobado";
+            String actual = sorteo.getEstado();
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        public void check_set_descripcion(){
+            
+            String expected = "Sorteo prueba";
+            sorteo.setDescripcion("Sorteo prueba");
+            String actual = sorteo.getDescripcion();
+            assertEquals(actual,expected);
+
+        }
+
+        @Test
+        public void check_set_fecha(){
+            
+            String expected = "15/09/2025";
+            sorteo.setFecha("15/09/2025");
+            String actual = sorteo.getFecha();
+            assertEquals(actual,expected);
+
+        }
+
+        @Test
+        public void check_set_estado(){
+            
+            String expected = "Suspendido";
+            sorteo.setEstado("Suspendido");
+            String actual = sorteo.getEstado();
+            assertEquals(actual,expected);
+
+        }
+
 }
