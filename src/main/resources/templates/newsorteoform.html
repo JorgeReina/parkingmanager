@@ -22,16 +22,22 @@
         </nav>
     </header>
     <br><br><br><br><br>
-    <form action="#" th:action="@{newSorteo}" th:object="${newsorteo}" method="post">
-        <label>Descripción:</label>
-        <input type="text" placeholder="Describe el sorteo" th:field="*{descripcion}"/>
-        <label>Fecha:</label>
-        <input type="text" th:field="*{fecha}"/>
-        <label>Estado:</label>
-        <input type="text" placeholder="Activo/Inactivo" th:field="*{estado}"/>
-        <button type="submit">Crear sorteo</button>
-    </form>
+    <fieldset class="field_set">
+    <legend>Datos</legend>
+        <form action="#" th:action="@{newSorteo}" th:object="${newsorteo}" method="post" align="center">
+            <label>Descripción:</label>
+            <input type="text" placeholder="Describe el sorteo" th:field="*{descripcion}"/>
+            <br><br>
+            <label>Fecha:</label>
+            <input type="text" placeholder="01-01-2023" th:field="*{fecha}"/>
+            <br><br>
+            <label>Estado:</label>
+            <input type="text" placeholder="Activo/Inactivo" th:field="*{estado}"/>
+            <br><br>
+        </form>
+    </fieldset>
     <br>
+    <button type="submit">Crear sorteo</button>
     </div>
 </body>
 </html>

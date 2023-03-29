@@ -59,7 +59,7 @@ nav{
     left:0;
     right:0;
     bottom:0;
-    background-color:#aaa;
+    background-color:#ffffff;
     min-width:800px;
     text-align:left;
     height:20px;
@@ -76,13 +76,31 @@ nav a{
 }
 
 nav a:hover{
-background-color:#717171;
+background-color:#b9b9b9;
 }
 
 #page{
     min-height:100%;
     position:relative;
     height:100%;
+}
+
+button {
+    background-color: #277fcb;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 600px;
+    height: 70px;
+    margin-left: 30%;
+}
+
+button:hover{
+    background-color: #115EA2;
 }
 
 table, th, td {
@@ -109,5 +127,46 @@ h1{
     margin-top: 35px;
     vertical-align: middle;
     color: white;
+}
+
+legend{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    -webkit-text-stroke: 2px black;
+    color: white;
+    font-size: 300%;
+    text-align: center;
+    padding: 0.2em 0.5em;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+legend:before {
+    position: absolute;
+    content: '';
+    height: 20%;
+    border-left: 3px solid #ffffff;
+    left: 0px;
+    top: 40%;
+}
+legend:after {
+    position: absolute;
+    content: '';
+    height: 15px;
+    border-right: 3px solid #ffffff;
+    right: 0px;
+    top: 40%;
+}
+
+.field_set{
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-left: 125px;
+    margin-right: 125px;
+    margin-bottom: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
