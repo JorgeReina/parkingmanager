@@ -85,18 +85,8 @@ background-color:#b9b9b9;
     height:100%;
 }
 
-#botonindice {
-    background-color: #277fcb;
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 600px;
-    height: 70px;
-    margin-left: 30%;
+button #form{
+    margin-left: 20%;
 }
 
 button {
@@ -110,7 +100,6 @@ button {
     font-size: 16px;
     width: 600px;
     height: 70px;
-    margin-left: 30%;
 }
 
 button:hover{

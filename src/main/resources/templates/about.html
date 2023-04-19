@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Sorteos</title>
+    <title>Sobre nosotros</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <header>
         <div>
             <a href="index.html"><img src="https://restricciones-madrid.es/wp-content/uploads/2019/01/parking2.png"></a>
-            <h2>Gestión de Sorteos</a></h2>
+            <h2>Sobre nosotros</a></h2>
         </div>
         <nav>
             <a href="index.html">Inicio</a>
@@ -21,27 +21,9 @@
             <a href="about">Sobre nosotros</a>
         </nav>
     </header>
-    <br><br><br><br><br>
-    <table class="tabla" align="center">
-        <tr>
-            <th>Descripcion</th>
-            <th>Fecha</th>
-            <th>Estado</th>
-        </tr>
-        <tr th:each="sorteo: ${sorteo}">
-            <td>
-                <p th:text="${sorteo.descripcion}"></p>
-            </td>
-            <td>
-                <p th:text="${sorteo.fecha}"></p>
-            </td>
-            <td>
-                <p th:text="${sorteo.estado}"></p>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <p align="center"><a href="newSorteo"><button class="index">Crear Sorteo</button></a></p>
+        <div>
+            <p>Prueba</p>
+        </div>
     </div>
 </body>
 </html>
