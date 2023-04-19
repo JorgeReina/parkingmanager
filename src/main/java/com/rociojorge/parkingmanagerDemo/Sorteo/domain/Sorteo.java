@@ -20,13 +20,13 @@ public class Sorteo {
     private long id;
     private String descripcion;
     private String fecha;
-    private String estado;
+    private Status estado;
 
     /**
      * Constructor vacio.
      */
     public Sorteo() {
-        this("","","");
+        this("","",null);
     }
 
     /**
@@ -35,7 +35,7 @@ public class Sorteo {
      * @param fecha Fecha sorteo
      * @param estado Estado del sorteo
      */
-    public Sorteo(String descripcion, String fecha, String estado) {
+    public Sorteo(String descripcion, String fecha, Status estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.estado = estado;
@@ -77,7 +77,7 @@ public class Sorteo {
      * Getter estado.
      * @return  devuelve el valor de esetado.
      */
-    public String getEstado() {
+    public Status getEstado() {
         return estado;
     }
 
@@ -85,7 +85,7 @@ public class Sorteo {
      * Setter estado 
      * @param descripcion Modifica el valor de estado
      */
-    public void setEstado(String estado) {
+    public void setEstado(Status estado) {
         this.estado = estado;
     }
 
