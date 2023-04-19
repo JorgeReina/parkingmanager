@@ -22,13 +22,13 @@ public class User {
     private String nombre;
     private String apellido1;
     private String apellido2;
-    private String rol;
+    private Rol rol;
 
     /**
      * Constructor vacio
      */
     public User() {
-        this("","","","");
+        this("","","",null);
     }
 
     /**
@@ -38,7 +38,7 @@ public class User {
      * @param apellido2 Segundo apellido
      * @param rol Rol de usuario
      */
-    public User(String nombre, String apellido1, String apellido2, String rol) {
+    public User(String nombre, String apellido1, String apellido2, Rol rol) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -73,7 +73,7 @@ public class User {
      * Getter rol
      * @return devuelve el valor de rol
      */
-    public String getRol() {
+    public Rol getRol() {
         return this.rol;
     }
 
@@ -105,7 +105,7 @@ public class User {
      * Setter rol
      * @param rol Modifica el valor de rol
      */
-    public void setRol(String rol) {
+    public void setRol(Rol rol) {
         this.rol = rol;
     }
 
