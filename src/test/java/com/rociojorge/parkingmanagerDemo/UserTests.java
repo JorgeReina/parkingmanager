@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.rociojorge.parkingmanagerDemo.user.domain.Rol;
 import com.rociojorge.parkingmanagerDemo.user.domain.User;
 
 public class UserTests {
@@ -13,7 +14,7 @@ public class UserTests {
 
     @BeforeEach
         public void init(){
-        this.user = new User ("David", "Hormigo", "Ramirez", "Profesor");
+        this.user = new User ("David", "Hormigo", "Ramirez", Rol.PROFESOR);
         }
 
     @Test
@@ -48,7 +49,7 @@ public class UserTests {
         //Arrange
         String expected = "Profesor";
         //Act
-        String actual = user.getRol();
+        Rol actual = user.getRol();
         //Assert
         assertEquals(expected, actual);
     }
@@ -86,9 +87,9 @@ public class UserTests {
     @Test
     public void check_set_rol(){
         
-        String expected = "Alumno";
-        user.setRol("Alumno");
-        String actual = user.getRol();
+        Rol expected = Rol.ALUMNO;
+        user.setRol(Rol.ALUMNO);
+        Rol actual = user.getRol();
         assertEquals(actual,expected);
 
     }
