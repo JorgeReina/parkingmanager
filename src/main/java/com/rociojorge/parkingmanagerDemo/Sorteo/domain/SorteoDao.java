@@ -4,13 +4,13 @@ public class SorteoDao {
     
     private String descripcion;
     private String fecha;
-    private String estado;
+    private Status estado;
 
     public SorteoDao(){
-        this("","","");
+        this("","",null);
     }
 
-    public SorteoDao(String descripcion, String fecha, String estado) {
+    public SorteoDao(String descripcion, String fecha, Status estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.estado = estado;
@@ -28,10 +28,10 @@ public class SorteoDao {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-    public String getEstado() {
+    public Status getEstado() {
         return estado;
     }
-    public void setEstado(String estado) {
+    public void setEstado(Status estado) {
         this.estado = estado;
     }
 
