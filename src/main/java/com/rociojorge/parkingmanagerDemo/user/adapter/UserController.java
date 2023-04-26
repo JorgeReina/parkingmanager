@@ -2,12 +2,16 @@ package com.rociojorge.parkingmanagerDemo.user.adapter;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.rociojorge.parkingmanagerDemo.core.exceptions.UserExistsException;
 import com.rociojorge.parkingmanagerDemo.user.domain.UserDao;
 import com.rociojorge.parkingmanagerDemo.user.service.UserService;
+
+import jakarta.validation.Valid;
 
 /**
  * Controlador de la clase usuario.
@@ -59,8 +63,22 @@ public class UserController {
      * @return Lista de usuarios
      */
     @PostMapping("/newUser")
-    public String createUser(@ModelAttribute UserDao userDao) {
-        this.userService.register(userDao);
+    public String createUser(@Valid @ModelAttribute UserDao userDao, BindingResult bindingResult, Model model) {
+        // Si algun error de validación automática con UserDao
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("userDao", userDao);
+            return "user/createform";
+        }
+
+        try {
+            this.userService.register(userDao);
+        }
+        // Cuando ya existe un usuario con el correo
+        catch (UserExistsException exception) {
+            model.addAttribute("userDao", userDao);
+            bindingResult.reject("email", "Ya existe el usuario con el correo");
+            return "user/createform";
+        }
         return "redirect:/userlist";
     }
 }

@@ -1,5 +1,6 @@
 package com.rociojorge.parkingmanagerDemo.user.service;
 
+import com.rociojorge.parkingmanagerDemo.core.exceptions.UserExistsException;
 import com.rociojorge.parkingmanagerDemo.user.domain.*;
 
 /**
@@ -21,5 +22,8 @@ public interface UserService {
      * Registra los datos de UserDao
      * @param userDao
      */
-    public void register(UserDao userDao);
+    public void register(UserDao userDao) throws UserExistsException;
+
+    public boolean userExits(String email);
+    
 }
