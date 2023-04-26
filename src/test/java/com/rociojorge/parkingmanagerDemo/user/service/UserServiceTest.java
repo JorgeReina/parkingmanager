@@ -34,7 +34,7 @@ public class UserServiceTest {
   void testGetAll() {
 
     List<User> expectedUsers = new ArrayList<>();
-    expectedUsers.add(new User("Jorge", "Reina", "Romero", null));
+    expectedUsers.add(new User("Jorge", "Reina", "Romero", "jorge@correo", null));
     UserRepository mockRepository = mock(UserRepository.class);
     when(mockRepository.findAll()).thenReturn(expectedUsers);
 

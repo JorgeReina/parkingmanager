@@ -1,5 +1,8 @@
 package com.rociojorge.parkingmanagerDemo.user.domain;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 /**
  * Clase que representa a los usuarios.
  * @author Jorge Reina Romero
@@ -10,16 +13,21 @@ package com.rociojorge.parkingmanagerDemo.user.domain;
 
 public class UserDao {
     
+    @NotBlank(message = "El nombre es obligatorio")
     private String nombre;
+    @NotBlank(message = "El primer apellido es obligatorio")
     private String apellido1;
     private String apellido2;
+    @Email(message = "El formato del correo no es adecuado")
+    @NotBlank(message = "El correo no puede estar vacio")
+    private String email;
     private Rol rol;
 
     /**
      * Constructor vacio.
      */
     public UserDao(){
-        this("","","",null);
+        this("","","","",null);
     }
 
     /**
@@ -29,10 +37,11 @@ public class UserDao {
      * @param apellido2 Segundo apellido
      * @param rol Rol del usuario
      */
-    public UserDao(String nombre, String apellido1, String apellido2, Rol rol) {
+    public UserDao(String nombre, String apellido1, String apellido2, String email, Rol rol) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
+        this.email = email;
         this.rol = rol;
     }
 
@@ -82,6 +91,22 @@ public class UserDao {
      */
     public void setApellido2(String apellido2) {
         this.apellido2 = apellido2;
+    }
+
+    /**
+     * Getter email
+     * @return devuelve el valor de email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Setter email
+     * @param email modifica el valor de email
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**

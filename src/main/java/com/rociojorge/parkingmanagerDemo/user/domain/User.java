@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.rociojorge.parkingmanagerDemo.sorteo.domain.Sorteo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,6 +27,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Column(unique = true)
+    private String email;
     private String nombre;
     private String apellido1;
     private String apellido2;
@@ -42,7 +45,7 @@ public class User {
      * Constructor vacio
      */
     public User() {
-        this("","","",null);
+        this("","","","",null);
     }
 
     /**
@@ -52,10 +55,11 @@ public class User {
      * @param apellido2 Segundo apellido
      * @param rol Rol de usuario
      */
-    public User(String nombre, String apellido1, String apellido2, Rol rol) {
+    public User(String nombre, String apellido1, String apellido2, String email, Rol rol) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
+        this.email = email;
         this.rol = rol;
     }
 
@@ -81,6 +85,14 @@ public class User {
      */
     public String getApellido2() {
         return this.apellido2;
+    }
+
+    /**
+     * Getter email
+     * @return Devuelve el valor de email
+     */
+    public String getEmail() {
+        return email;
     }
 
     /**
@@ -113,6 +125,14 @@ public class User {
      */
     public void setApellido2(String apellido2) {
         this.apellido2 = apellido2;
+    }
+
+    /**
+     * Setter email
+     * @param email modifica el valor de mail
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     /**

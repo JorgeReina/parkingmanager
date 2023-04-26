@@ -14,7 +14,7 @@ public class UserTests {
 
     @BeforeEach
         public void init(){
-        this.user = new User ("David", "Hormigo", "Ramirez", Rol.PROFESOR);
+        this.user = new User ("David", "Hormigo", "Ramirez", "david@correo", Rol.PROFESOR);
         }
 
     @Test
