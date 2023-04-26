@@ -1,5 +1,8 @@
 package com.rociojorge.parkingmanagerDemo.user.adapter;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.rociojorge.parkingmanagerDemo.core.exceptions.UserExistsException;
+import com.rociojorge.parkingmanagerDemo.user.domain.Rol;
 import com.rociojorge.parkingmanagerDemo.user.domain.UserDao;
 import com.rociojorge.parkingmanagerDemo.user.service.UserService;
 
@@ -53,8 +57,14 @@ public class UserController {
     @GetMapping("/newUser")
     public String showUserCreateForm(Model model) {
         UserDao userDao = new UserDao();
-        model.addAttribute("newuser", userDao);
+        model.addAttribute("userDao", userDao);
+        addRoleSelectList(model);
         return "user/newuserform";
+    }
+
+    private void addRoleSelectList(Model model) {
+        List<Rol> roles = Arrays.asList(Rol.values());
+        model.addAttribute("roles", roles);
     }
 
     /**
@@ -67,7 +77,8 @@ public class UserController {
         // Si algun error de validación automática con UserDao
         if (bindingResult.hasErrors()) {
             model.addAttribute("userDao", userDao);
-            return "user/createform";
+            addRoleSelectList(model);
+            return "user/newuserform";
         }
 
         try {
@@ -76,8 +87,9 @@ public class UserController {
         // Cuando ya existe un usuario con el correo
         catch (UserExistsException exception) {
             model.addAttribute("userDao", userDao);
+            addRoleSelectList(model);
             bindingResult.reject("email", "Ya existe el usuario con el correo");
-            return "user/createform";
+            return "user/newuserform";
         }
         return "redirect:/userlist";
     }

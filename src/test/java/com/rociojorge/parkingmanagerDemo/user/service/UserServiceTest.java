@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import com.rociojorge.parkingmanagerDemo.core.exceptions.UserExistsException;
 import com.rociojorge.parkingmanagerDemo.user.domain.User;
 import com.rociojorge.parkingmanagerDemo.user.domain.UserDao;
 import com.rociojorge.parkingmanagerDemo.user.domain.UserRepository;
@@ -17,7 +18,7 @@ public class UserServiceTest {
 
   @Test
 
-  void testRegister() {
+  void testRegister() throws UserExistsException {
     
 
     UserRepository mockRepository = mock(UserRepository.class);

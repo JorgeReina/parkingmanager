@@ -24,7 +24,12 @@
     <br><br><br><br><br>
         <fieldset class="field_set">
         <legend>Datos</legend>
-        <form action="#" th:action="@{newUser}" th:object="${newuser}" method="post" align="center">
+        <form action="#" th:action="@{newUser}" th:object="${userDao}" method="post" align="center">
+
+            <div th:if="${#fields.hasErrors('*')}"> 
+                <p style="color: red;" th:each="err : ${#fields.errors('*')}" th:text="${err}"></p> 
+            </div>
+
             <label>Nombre:</label>
             <input type="text" placeholder="Bonifacio" th:field="*{nombre}"/>
             <br>
@@ -34,8 +39,16 @@
             <label>Segundo apellido:</label>
             <input type="text" placeholder="Largo" th:field="*{apellido2}"/>
             <br>
+            <label>Email:</label>
+            <input type="text" placeholder="user@correo" th:field="*{email}"/>
+            <br>
             <label>Rol:</label>
-            <input type="text" placeholder="Profesor/Alumno" th:field="*{rol}"/>
+            <select th:field="*{Rol}">
+                <option th:each="Rol: ${roles}"
+                        th:value="${Rol}"
+                        th.text="${Rol.getDisplayName()}">
+                </option>
+            </select>
             <br><br><br>
             <button class="form" type="submit">Crear usuario</button>
         </form>
