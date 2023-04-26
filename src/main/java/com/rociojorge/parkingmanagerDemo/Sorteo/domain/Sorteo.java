@@ -1,9 +1,14 @@
 package com.rociojorge.parkingmanagerDemo.sorteo.domain;
 
+import java.util.Set;
+
+import com.rociojorge.parkingmanagerDemo.user.domain.User;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 /**
  * Obejeto sorteo.
@@ -21,6 +26,8 @@ public class Sorteo {
     private String descripcion;
     private String fecha;
     private Status estado;
+    @ManyToMany(mappedBy = "includeIn")
+    private Set<User> userIncluded;
 
     /**
      * Constructor vacio.

@@ -1,9 +1,16 @@
 package com.rociojorge.parkingmanagerDemo.user.domain;
 
+import java.util.Set;
+
+import com.rociojorge.parkingmanagerDemo.sorteo.domain.Sorteo;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 
 /**
  * Objeto de usuarios
@@ -23,6 +30,13 @@ public class User {
     private String apellido1;
     private String apellido2;
     private Rol rol;
+    @ManyToMany
+    @JoinTable(
+        name = "users_assigned",
+        joinColumns = @JoinColumn(name="user_id"),
+        inverseJoinColumns= @JoinColumn(name = "sorteo_id")
+    )
+    private Set<Sorteo> includeIn;
 
     /**
      * Constructor vacio
